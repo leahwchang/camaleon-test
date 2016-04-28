@@ -1,0 +1,53 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require camaleon_cms/bootstrap.min.css
+ *= require font-awesome
+ *= require ./wpbase
+ *= require ./magnific-ver
+ *= require ./style-ver
+ */
+
+ /************categories carousel***********/
+.categories-carousel{
+  margin-bottom: 0;
+  padding: 0 40px 0px 40px;
+  /* The controlsy */
+  .carousel-control {
+    left: -12px;
+    height: 40px;
+    width: 40px;
+    background: none repeat scroll 0 0 #222222;
+    border: 4px solid #FFFFFF;
+    border-radius: 23px 23px 23px 23px;
+    top: 30%;
+  }
+  .carousel-control.right {
+    right: -12px;
+    left: auto;
+  }
+  /* The indicators */
+  .carousel-indicators {
+    right: 50%;
+    top: auto;
+    bottom: -10px;
+    margin-right: -19px;
+  }
+  /* The colour of the indicators */
+  .carousel-indicators li {
+    background: #cecece;
+  }
+  .carousel-indicators .active {
+    background: #428bca;
+  }
+  .thumbnail{
+    margin-bottom: 0;
+  }
+}

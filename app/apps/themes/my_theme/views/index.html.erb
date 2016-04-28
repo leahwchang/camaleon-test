@@ -1,0 +1,71 @@
+<!-- +++++ Carousal Section +++++ -->
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+        <div class="item active">
+            <img src="http://placehold.it/400x200" alt="...">
+            <div class="carousel-caption">
+                <h2>Lorem Ipsum</h2>
+            </div>
+        </div>
+        <div class="item">
+            <img src="http://placehold.it/400x200" alt="...">
+            <div class="carousel-caption">
+                <h2>Lorem Ipsum</h2>
+            </div>
+        </div>
+        <div class="item">
+            <img src="http://placehold.it/400x200" alt="...">
+            <div class="carousel-caption">
+                <h2>Lorem Ipsum</h2>
+            </div>
+        </div>
+    </div>
+
+    <!-- Controls -->
+    <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+        <span class="fa fa-angle-left"></span>
+    </a>
+    <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+        <span class="fa fa-angle-right"></span>
+    </a>
+</div>
+
+
+<!-- +++++ Welcome Section +++++ -->
+<div id="ww">
+    <div class="container" >
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <% home_page = (current_site.the_posts("page").last).decorate %>
+                <h1><%= home_page.the_title %></h1>
+                <div><%= raw home_page.the_content %></div>
+            </div><!-- /col-lg-8 -->
+        </div><!-- /row -->
+    </div> <!-- /container -->
+</div><!-- /ww -->
+
+
+
+<!-- +++++ Projects Section +++++ -->
+<div class="container pt">
+    <h3><%= ct("latest_articles", default: 'Latest Articles') %></h3>
+    <div class="row mt centered latest_articles">
+        <% current_site.the_posts(current_theme.get_field("recent_post_type")).latest.limit(current_theme.get_field("home_qty")).decorate.each do |post| %>
+            <!-- PORTFOLIO ITEM -->
+            <div class="col-lg-4">
+                <a class="zoom green" href="<%= post.the_url %>" title="<%= post.the_title %>" >
+                    <img width="400" height="300" src="<%= post.the_thumb_url("http://placehold.it/400x300") %>" class="attachment-post-thumbnail wp-post-image" alt="post image" />    </a>
+
+                <p><%= post.the_title %></p>
+            </div> <!-- /col -->
+        <% end %>
+    </div><!-- /row -->
+</div><!-- /container -->
